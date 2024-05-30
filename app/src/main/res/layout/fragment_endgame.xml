@@ -4,16 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/endgame_background"
+    android:background="@drawable/endgame_background_button"
     tools:context=".Teleop">
 
     <!-- TODO: Update blank fragment layout -->
 
 
+    <Button
+        android:id="@+id/trapDecrease"
+        android:layout_width="148dp"
+        android:layout_height="105dp"
+        android:background="@drawable/invisable_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.409" />
+
+    <Button
+        android:id="@+id/trapIncrease"
+        android:layout_width="148dp"
+        android:layout_height="108dp"
+        android:background="@drawable/invisable_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.406" />
+
+    <TextView
+        android:id="@+id/trapCounter"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:fontFamily="@font/helvetica"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441" />
+
+    <Button
+        android:id="@+id/harmonyIncrease"
+        android:layout_width="148dp"
+        android:layout_height="99dp"
+        android:background="@drawable/invisable_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <TextView
+        android:id="@+id/harmonyCounter"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:fontFamily="@font/helvetica"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.279" />
+
     <CheckBox
         android:id="@+id/deadBot"
-        android:layout_width="114dp"
-        android:layout_height="117dp"
+        android:layout_width="110dp"
+        android:layout_height="105dp"
         android:buttonTint="@color/white"
         android:fontFamily="@font/helvetica"
         android:gravity="bottom"
@@ -21,15 +87,15 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintHorizontal_bias="0.751"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
+        app:layout_constraintVertical_bias="0.618" />
 
     <CheckBox
         android:id="@+id/penalized"
-        android:layout_width="123dp"
-        android:layout_height="110dp"
+        android:layout_width="130dp"
+        android:layout_height="124dp"
         android:buttonTint="@color/white"
         android:fontFamily="@font/helvetica"
         android:gravity="bottom"
@@ -37,26 +103,10 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintHorizontal_bias="0.276"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587" />
-
-    <EditText
-        android:id="@+id/trapScored"
-        android:layout_width="452dp"
-        android:layout_height="76dp"
-        android:fontFamily="@font/helvetica"
-        android:hint="Trap Scored"
-        android:inputType="number"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintVertical_bias="0.61" />
 
     <EditText
         android:id="@+id/additionalNotes"
@@ -71,24 +121,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819" />
-
-    <EditText
-        android:id="@+id/harmony"
-        android:layout_width="454dp"
-        android:layout_height="70dp"
-        android:fontFamily="@font/helvetica"
-        android:hint="Harmony Bonus"
-        android:inputType="number"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.845" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"
@@ -97,39 +130,50 @@
 
     <RadioGroup
         android:id="@+id/EndgameRadioGroup"
-        android:layout_width="520dp"
-        android:layout_height="150dp"
+        android:layout_width="517dp"
+        android:layout_height="68dp"
         android:layout_marginBottom="40dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.653"
+        app:layout_constraintHorizontal_bias="0.626"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179">
-
-        <RadioButton
-            android:id="@+id/Parking"
-            android:layout_width="257dp"
-            android:layout_height="100dp"
-            android:buttonTint="@color/white"
-            android:fontFamily="@font/helvetica"
-            android:onClick="onRadioButtonClicked"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.319"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintVertical_bias="0.129">
 
         <RadioButton
             android:id="@+id/Climb"
-            android:layout_width="250dp"
-            android:layout_height="100dp"
+            android:layout_width="253dp"
+            android:layout_height="81dp"
+            android:layout_gravity="bottom"
             android:buttonTint="@color/white"
             android:fontFamily="@font/helvetica"
             android:onClick="onRadioButtonClicked" />
 
+        <RadioButton
+            android:id="@+id/Parking"
+            android:layout_width="254dp"
+            android:layout_height="93dp"
+            android:layout_gravity="bottom"
+            android:buttonTint="@color/white"
+            android:fontFamily="@font/helvetica"
+            android:onClick="onRadioButtonClicked" />
+
+
     </RadioGroup>
+
+    <Button
+        android:id="@+id/harmonyDecrease"
+        android:layout_width="143dp"
+        android:layout_height="106dp"
+        android:background="@drawable/invisable_rectangle"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.241" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

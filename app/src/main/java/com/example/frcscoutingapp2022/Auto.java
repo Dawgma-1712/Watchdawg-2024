@@ -29,6 +29,12 @@ public class Auto extends Fragment implements View.OnClickListener {
 
     private int AutoNoteCounter = 0;
 
+    //Auto Varibles
+    public static int AutoAMP = 0;
+    public static int AutoSpeaker = 0;
+    public static int AutoNote = 0;
+    public static int leave = 0;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,6 +64,13 @@ public class Auto extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.NotesAcquiredDecrease).setOnClickListener(this);
 
 
+        //Auto
+        leave = 0;
+        AutoAMP = 0;
+        AutoSpeaker = 0;
+        AutoNote = 0;
+
+
         return view;
     }
     //stuff that happens when you hit buttons
@@ -69,21 +82,21 @@ public class Auto extends Fragment implements View.OnClickListener {
                 AutoAMPCounter++;
                 AutoAMPText.setText(Integer.toString(AutoAMPCounter));
                 //MainActivity.editMatchData(0, 0, MainActivity.getButtonData()[0][0] + 1);
-                MainActivity.AutoAMP++;
+                Auto.AutoAMP++;
                 break;
             case R.id.AutoAMPDecrease:
                 if(AutoAMPCounter > 0) {
                     AutoAMPCounter--;
                     AutoAMPText.setText(Integer.toString(AutoAMPCounter));
                     //MainActivity.editMatchData(0, 0, MainActivity.getButtonData()[0][0] - 1);
-                    MainActivity.AutoAMP--;
+                    Auto.AutoAMP--;
                 } break;
 
             case R.id.AutoSpeakerIncrease:
                 AutoSpeakerCounter++;
                 AutoSpeakerText.setText(Integer.toString(AutoSpeakerCounter));
                 //MainActivity.editMatchData(0, 1, MainActivity.getButtonData()[0][1] + 1);\
-                MainActivity.AutoSpeaker++;
+                Auto.AutoSpeaker++;
 
                 break;
 
@@ -92,14 +105,14 @@ public class Auto extends Fragment implements View.OnClickListener {
                     AutoSpeakerCounter--;
                     AutoSpeakerText.setText(Integer.toString(AutoSpeakerCounter));
                     //MainActivity.editMatchData(0, 1, MainActivity.getButtonData()[0][1] - 1);
-                    MainActivity.AutoSpeaker--;
+                    Auto.AutoSpeaker--;
                 } break;
 
             case R.id.NotesAcquiredIncrease:
                 AutoNoteCounter++;
                 AutoNoteText.setText(Integer.toString(AutoNoteCounter));
                 //MainActivity.editMatchData(0, 2, MainActivity.getButtonData()[0][2] + 1);
-                MainActivity.AutoNote++;
+                Auto.AutoNote++;
 
                 break;
 
@@ -108,7 +121,7 @@ public class Auto extends Fragment implements View.OnClickListener {
                     AutoNoteCounter--;
                     AutoNoteText.setText(Integer.toString(AutoNoteCounter));
                     //MainActivity.editMatchData(0, 2, MainActivity.getButtonData()[0][2] - 1);
-                    MainActivity.AutoNote--;
+                    Auto.AutoNote--;
                 } break;
 
 

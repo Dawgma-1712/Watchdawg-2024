@@ -74,19 +74,7 @@ public class save extends Fragment implements View.OnClickListener{
                         MainActivity.scoutName = MainActivity.scoutNameText.getText().toString();
                     }
                     if (endgame.additionalNotesText.getText().toString() != null){
-                        MainActivity.additionalNotes = endgame.additionalNotesText.getText().toString();
-                    }
-                    if (!endgame.harmonyText.getText().toString().isEmpty()){
-                        MainActivity.harmony = endgame.harmonyText.getText().toString();
-                    }
-                    else{
-                        MainActivity.harmony = "0";
-                    }
-                    if (!endgame.trapScoredText.getText().toString().isEmpty()){
-                        MainActivity.trapScored = endgame.trapScoredText.getText().toString();
-                    }
-                    else{
-                        MainActivity.trapScored = "0";
+                        endgame.additionalNotes = endgame.additionalNotesText.getText().toString();
                     }
 
 
@@ -97,10 +85,10 @@ public class save extends Fragment implements View.OnClickListener{
 //Code for QR match scouting
 
                 data = MainActivity.teamNumber + "," + MainActivity.matchNumber + ","
-                        /* Auto */   + MainActivity.leave + "," + MainActivity.AutoSpeaker + "," + MainActivity.AutoAMP + "," + MainActivity.AutoNote + ","
-                        /* TeleOp */ + MainActivity.playedDefense + "," + MainActivity.defendedOn + ","+ MainActivity.TeleopAmpScored + "," + MainActivity.TeleopSpeakerScored + "," + MainActivity.TeleopAmpMissed + "," + MainActivity.TeleopSpeakerMissed + ","
-                        /* Endgame */+ MainActivity.Climb +","+ MainActivity.Parking + ","+ MainActivity.harmony + "," + MainActivity.trapScored + "," +
-                        /* AddInfo*/ + MainActivity.penalty + "," + MainActivity.deadBot + "," + MainActivity.alliance + "," + MainActivity.additionalNotes  + "," + MainActivity.scoutName;
+                        /* Auto */   + Auto.leave + "," + Auto.AutoSpeaker + "," + Auto.AutoAMP + "," + Auto.AutoNote + ","
+                        /* TeleOp */ + MainActivity.playedDefense + "," + MainActivity.defendedOn + ","+ Teleop.TeleopAmpScored + "," + Teleop.TeleopSpeakerScored + "," + Teleop.TeleopAmpMissed + "," + Teleop.TeleopSpeakerMissed + ","
+                        /* Endgame */+ endgame.Climb +","+ endgame.Parking + ","+ endgame.harmony + "," + endgame.trapScored + "," +
+                        /* AddInfo*/ + endgame.penalty + "," + endgame.deadBot + "," + MainActivity.alliance + "," + endgame.additionalNotes  + "," + MainActivity.scoutName;
 
 
                 //Initialize multi format writer
@@ -165,10 +153,10 @@ public class save extends Fragment implements View.OnClickListener{
                 System.out.println(MainActivity.defendedOnByNumber);
                 //code for saving results
                 data += MainActivity.teamNumber + "," + MainActivity.matchNumber + ","
-                        /* Auto */   + MainActivity.leave + "," + MainActivity.AutoSpeaker + "," + MainActivity.AutoAMP + "," + MainActivity.AutoNote + ","
-                        /* TeleOp */ + MainActivity.playedDefense + "," + MainActivity.defendedOn + ","+ MainActivity.TeleopAmpScored + "," + MainActivity.TeleopSpeakerScored + "," + MainActivity.TeleopAmpMissed + "," + MainActivity.TeleopSpeakerMissed + ","
-                        /* Endgame */+ MainActivity.Climb +","+ MainActivity.Parking + "," + MainActivity.harmony + "," + MainActivity.trapScored
-                        /* AddInfo*/ + "," + MainActivity.penalty + "," + MainActivity.deadBot + "," + MainActivity.alliance + "," + MainActivity.additionalNotes  + "," + MainActivity.scoutName;
+                        /* Auto */   + Auto.leave + "," + Auto.AutoSpeaker + "," + Auto.AutoAMP + "," + Auto.AutoNote + ","
+                        /* TeleOp */ + MainActivity.playedDefense + "," + MainActivity.defendedOn + ","+ Teleop.TeleopAmpScored + "," + Teleop.TeleopSpeakerScored + "," + Teleop.TeleopAmpMissed + "," + Teleop.TeleopSpeakerMissed + ","
+                        /* Endgame */+ endgame.Climb +","+ endgame.Parking + "," + endgame.harmony + "," + endgame.trapScored
+                        /* AddInfo*/ + "," + endgame.penalty + "," + endgame.deadBot + "," + MainActivity.alliance + "," + endgame.additionalNotes  + "," + MainActivity.scoutName;
 
 
                 // Create and save file

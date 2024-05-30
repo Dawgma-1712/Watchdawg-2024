@@ -47,28 +47,6 @@ public class MainActivity extends AppCompatActivity {
     public static int defendedOn = 0;
     public static String defendedOnByNumber = "";
 
-    //Endgame Varibles
-    public static int Parking = 0;
-    public static int Climb = 0;
-    public static int penalty = 0;
-    public static int deadBot = 0;
-    public static String trapScored;
-    public static String harmony;
-    public static String additionalNotes;
-
-    //Auto Varibles
-    public static int AutoAMP = 0;
-    public static int AutoSpeaker = 0;
-    public static int AutoNote = 0;
-    public static int leave = 0;
-
-
-    //Teleop Varibles
-    public static int TeleopAmpScored = 0;
-    public static int TeleopAmpMissed = 0;
-    public static int TeleopSpeakerScored = 0;
-    public static int TeleopSpeakerMissed = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,27 +77,6 @@ public class MainActivity extends AppCompatActivity {
         playedDefense = 0;
         defendedOn = 0;
 
-        //Endgame
-        Parking = 0;
-        Climb = 0;
-        penalty = 0;
-        deadBot = 0;
-
-        //Auto
-        leave = 0;
-        AutoAMP = 0;
-        AutoSpeaker = 0;
-        AutoNote = 0;
-
-        //Teleop
-        TeleopAmpScored = 0;
-        TeleopAmpMissed = 0;
-        TeleopSpeakerScored = 0;
-        TeleopSpeakerMissed = 0;
-
-
-
-
 
     }
 
@@ -147,17 +104,17 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.LeaveCheckBox:
                 //MainActivity.checkBoxData[16] = checked ? 1 : 0;
-                MainActivity.leave = checked ? 1 : 0;
+                Auto.leave = checked ? 1 : 0;
 
                 break;
             case R.id.penalized:
                 //MainActivity.checkBoxData[17] = checked ? 1 : 0;
-                MainActivity.penalty = checked ? 1 : 0;
+                endgame.penalty = checked ? 1 : 0;
 
                 break;
             case R.id.deadBot:
                 //MainActivity.checkBoxData[18] = checked ? 1 : 0;
-                MainActivity.deadBot = checked ? 1 : 0;
+                endgame.deadBot = checked ? 1 : 0;
 
                 break;
 
@@ -184,26 +141,26 @@ public class MainActivity extends AppCompatActivity {
 
 
             case R.id.Climb:
-                if(MainActivity.Climb ==1){
+                if(endgame.Climb ==1){
                     EndgameRadioGroup.clearCheck();
-                    MainActivity.Climb =0;
+                    endgame.Climb =0;
                 }
                 else{
-                MainActivity.Climb =1;
-                MainActivity.Parking =0;
-                System.out.println(MainActivity.Climb);
-                System.out.println(MainActivity.Parking);}
+                    endgame.Climb =1;
+                    endgame.Parking =0;
+                System.out.println(endgame.Climb);
+                System.out.println(endgame.Parking);}
                 break;
             case R.id.Parking:
-                if(MainActivity.Parking==1){
+                if(endgame.Parking==1){
                     EndgameRadioGroup.clearCheck();
-                    MainActivity.Parking=0;
+                    endgame.Parking=0;
                 }
                 else{
-                MainActivity.Climb =0;
-                MainActivity.Parking =1;
-                System.out.println(MainActivity.Climb);
-                System.out.println(MainActivity.Parking);}
+                    endgame.Climb =0;
+                    endgame.Parking =1;
+                System.out.println(endgame.Climb);
+                System.out.println(endgame.Parking);}
                 break;
         }
 

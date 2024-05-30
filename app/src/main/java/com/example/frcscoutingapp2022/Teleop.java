@@ -30,6 +30,12 @@ public class Teleop extends Fragment implements View.OnClickListener{
     private int TeleopScoredSpeakerCounter = 0;
     private int TeleopMissedSpeakerCounter = 0;
 
+    //Teleop Varibles
+    public static int TeleopAmpScored = 0;
+    public static int TeleopAmpMissed = 0;
+    public static int TeleopSpeakerScored = 0;
+    public static int TeleopSpeakerMissed = 0;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -62,6 +68,12 @@ public class Teleop extends Fragment implements View.OnClickListener{
         view.findViewById(R.id.TeleopMissedSpeakerIncrease).setOnClickListener(this);
         view.findViewById(R.id.TeleopMissedSpeakerDecrease).setOnClickListener(this);
 
+        //Teleop
+        TeleopAmpScored = 0;
+        TeleopAmpMissed = 0;
+        TeleopSpeakerScored = 0;
+        TeleopSpeakerMissed = 0;
+
         return view;
     }
 
@@ -76,7 +88,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 TeleopScoredAMPCounter++;
                 TeleopScoredAMPText.setText(Integer.toString(TeleopScoredAMPCounter));
                 //MainActivity.editMatchData(1, 0, MainActivity.getButtonData()[0][0] + 1);
-                MainActivity.TeleopAmpScored++;
+                Teleop.TeleopAmpScored++;
                 break;
 
             case R.id.TeleopScoredAMPDecrease:
@@ -84,14 +96,14 @@ public class Teleop extends Fragment implements View.OnClickListener{
                     TeleopScoredAMPCounter--;
                     TeleopScoredAMPText.setText(Integer.toString(TeleopScoredAMPCounter));
                     //MainActivity.editMatchData(1, 0, MainActivity.getButtonData()[0][0] - 1);
-                    MainActivity.TeleopAmpScored--;
+                    Teleop.TeleopAmpScored--;
                 } break;
 
             case R.id.TeleopMissedAMPIncrease:
                 TeleopMissedAMPCounter++;
                 TeleopMissedAMPText.setText(Integer.toString(TeleopMissedAMPCounter));
                 //MainActivity.editMatchData(1, 1, MainActivity.getButtonData()[0][1] + 1);
-                MainActivity.TeleopAmpMissed++;
+                Teleop.TeleopAmpMissed++;
                 break;
 
             case R.id.TeleopMissedAMPDecrease:
@@ -99,15 +111,15 @@ public class Teleop extends Fragment implements View.OnClickListener{
                     TeleopMissedAMPCounter--;
                     TeleopMissedAMPText.setText(Integer.toString(TeleopMissedAMPCounter));
                     //MainActivity.editMatchData(1, 1, MainActivity.getButtonData()[0][1] - 1);
-                    MainActivity.TeleopAmpMissed--;
+                    Teleop.TeleopAmpMissed--;
                 } break;
 
             case R.id.TeleopScoredSpeakerIncrease:
                 TeleopScoredSpeakerCounter++;
                 TeleopScoredSpeakerText.setText(Integer.toString(TeleopScoredSpeakerCounter));
                 //MainActivity.editMatchData(1, 2, MainActivity.getButtonData()[0][2] + 1);
-                MainActivity.TeleopSpeakerScored++;
-                System.out.println(MainActivity.TeleopSpeakerScored);
+                Teleop.TeleopSpeakerScored++;
+                System.out.println(Teleop.TeleopSpeakerScored);
                 break;
 
             case R.id.TeleopScoredSpeakerDecrease:
@@ -115,8 +127,8 @@ public class Teleop extends Fragment implements View.OnClickListener{
                     TeleopScoredSpeakerCounter--;
                     TeleopScoredSpeakerText.setText(Integer.toString(TeleopScoredSpeakerCounter));
                     //MainActivity.editMatchData(1, 2, MainActivity.getButtonData()[0][2] - 1);
-                    MainActivity.TeleopSpeakerScored--;
-                    System.out.println(MainActivity.TeleopSpeakerScored);
+                    Teleop.TeleopSpeakerScored--;
+                    System.out.println(Teleop.TeleopSpeakerScored);
 
                 } break;
 
@@ -124,7 +136,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                 TeleopMissedSpeakerCounter++;
                 TeleopMissedSpeakerText.setText(Integer.toString(TeleopMissedSpeakerCounter));
                 //MainActivity.editMatchData(1, 3, MainActivity.getButtonData()[0][3] + 1);
-                MainActivity.TeleopSpeakerMissed++;
+                Teleop.TeleopSpeakerMissed++;
                 break;
 
             case R.id.TeleopMissedSpeakerDecrease:
@@ -132,7 +144,7 @@ public class Teleop extends Fragment implements View.OnClickListener{
                     TeleopMissedSpeakerCounter--;
                     TeleopMissedSpeakerText.setText(Integer.toString(TeleopMissedSpeakerCounter));
                     //MainActivity.editMatchData(1, 3, MainActivity.getButtonData()[0][3] - 1);
-                    MainActivity.TeleopSpeakerMissed--;
+                    Teleop.TeleopSpeakerMissed--;
                 } break;
 
 

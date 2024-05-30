@@ -1,5 +1,6 @@
 package com.example.frcscoutingapp2022;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,21 +10,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link endgame#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class endgame extends Fragment {
+public class endgame extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     public static EditText additionalNotesText;
-    public static EditText trapScoredText;
-    public static EditText harmonyText;
+    public static TextView trapText;
+    public static TextView harmonyText;
+
+    //Endgame Varibles
+    private int harmonyCounter = 0;
+    private int trapCounter = 0;
+    public static int Parking = 0;
+    public static int Climb = 0;
+    public static int penalty = 0;
+    public static int deadBot = 0;
+    public static int trapScored=0;
+    public static int harmony=0;
+    public static String additionalNotes;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -62,17 +75,68 @@ public class endgame extends Fragment {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_endgame, container, false);
         additionalNotesText = view.findViewById(R.id.additionalNotes);
-        trapScoredText = view.findViewById(R.id.trapScored);
-        harmonyText = view.findViewById(R.id.harmony);
+        trapText = view.findViewById(R.id.trapCounter);
+        harmonyText = (TextView) view.findViewById(R.id.harmonyCounter);
+
+        view.findViewById(R.id.harmonyIncrease).setOnClickListener(this);
+        view.findViewById(R.id.harmonyDecrease).setOnClickListener(this);
+
+        view.findViewById(R.id.trapIncrease).setOnClickListener(this);
+        view.findViewById(R.id.trapDecrease).setOnClickListener(this);
+
+
+
+        //Endgame
+        Parking = 0;
+        Climb = 0;
+        penalty = 0;
+        deadBot = 0;
+        harmony = 0;
+        trapScored = 0;
+
 
         return view;
 
 
+    }
+    public void onClick(View view) {
+        switch(view.getId()){
+            //+1 to upper cone
+            case R.id.harmonyIncrease:
+                harmony++;
+                harmonyCounter++;
+                harmonyText.setText(Integer.toString(harmonyCounter));
+                break;
+            case R.id.harmonyDecrease:
+                if(harmonyCounter>0) {
+                    harmony--;
+                    harmonyCounter--;
+                    harmonyText.setText(Integer.toString(harmonyCounter));
+                }
+                break;
+
+            case R.id.trapIncrease:
+                trapScored++;
+                trapCounter++;
+                trapText.setText(Integer.toString(trapCounter));
+                break;
+            case R.id.trapDecrease:
+                if(trapCounter>0) {
+                    trapScored--;
+                    trapCounter--;
+                    trapText.setText(Integer.toString(trapCounter));
+                }
+                break;
+
+
+
+        }
     }
 }
